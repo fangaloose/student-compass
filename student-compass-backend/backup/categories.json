@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "619175ec016507985a07c86b"
+  },
+  "name": "Programming"
+},{
+  "_id": {
+    "$oid": "619175ec016507985a07c86c"
+  },
+  "name": "Mathematics"
+},{
+  "_id": {
+    "$oid": "619175ec016507985a07c86d"
+  },
+  "name": "Physics"
+},{
+  "_id": {
+    "$oid": "619175ec016507985a07c86e"
+  },
+  "name": "History"
+},{
+  "_id": {
+    "$oid": "619175ec016507985a07c86f"
+  },
+  "name": "Law"
+},{
+  "_id": {
+    "$oid": "619175ec016507985a07c870"
+  },
+  "name": "Languages and Cultures"
+},{
+  "_id": {
+    "$oid": "61917e7d30335ef9fc755c11"
+  },
+  "name": "Geography",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619bb571c03770a03993356a"
+  },
+  "name": "Chemistry",
+  "__v": 0
+}]

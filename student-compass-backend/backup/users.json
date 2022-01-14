@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "6196b0a4f66d6e335ca0ed99"
+  },
+  "fname": "Georges",
+  "lname": "Farah",
+  "email": "admin@net.usj.edu.lb",
+  "role": {
+    "$oid": "6196ad25c1e37ade5bb00588"
+  },
+  "password": "$2b$10$lOn6e3tpPCpWhJ4GsIB4TOMcAeF5Yeq3aD1K1FsVW1ZQ7YY9No4K2",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6196b25af66d6e335ca0eda3"
+  },
+  "fname": "Michel",
+  "lname": "Hajjal",
+  "email": "teacher@net.usj.edu.lb",
+  "role": {
+    "$oid": "6196ad32c1e37ade5bb0058c"
+  },
+  "password": "$2b$10$Ys3guE0ivxXiZ04e9Hh2ROCI5hVDTLhK12bV5Az1fI5IL8h5waO5S",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6196b28ef66d6e335ca0eda8"
+  },
+  "fname": "John",
+  "lname": "Doe",
+  "email": "student@net.usj.edu.lb",
+  "role": {
+    "$oid": "6196ad2ec1e37ade5bb0058a"
+  },
+  "password": "$2b$10$QUs1B3U/wo9MygXcp0VoI.sFdWoe0xZP/s.88Bw1JnkieUFEgSVna",
+  "__v": 0
+}]

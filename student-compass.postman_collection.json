@@ -1,0 +1,1004 @@
+{
+	"info": {
+		"_postman_id": "18954bcc-d127-42d6-8c2b-cc6b20a2b7ff",
+		"name": "student-compass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "postCategories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"SVT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchCategories",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/categories/:idcategory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								":idcategory"
+							],
+							"variable": [
+								{
+									"key": "idcategory",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategorie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/categories/:idcategory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								":idcategory"
+							],
+							"variable": [
+								{
+									"key": "idcategory",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "post user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"fname\": \"Georges\",\r\n        \"lname\": \"Farah\",\r\n        \"email\": \"georges.farah2@net.usj.edu.lb\",\r\n        \"role\": \"6196ad2ec1e37ade5bb0058a\",\r\n        \"password\":\"\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"  const environmentToken = \"bearerToken\"; // the name of the environment variable\r",
+									"  const newToken = pm.response.json().jwt;\r",
+									"\r",
+									"  pm.environment.set(environmentToken, newToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"student@net.usj.edu.lb\",\r\n    \"password\":\"student\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/:iduser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":iduser"
+							],
+							"variable": [
+								{
+									"key": "iduser",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change pass",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldpassword\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/:iduser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":iduser"
+							],
+							"variable": [
+								{
+									"key": "iduser",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCoursesTeacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/:idteacher/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":idteacher",
+								"courses"
+							],
+							"variable": [
+								{
+									"key": "idteacher",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourseStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/:idstudent/courses/current",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":idstudent",
+								"courses",
+								"current"
+							],
+							"variable": [
+								{
+									"key": "idstudent",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Semester",
+			"item": [
+				{
+					"name": "getTerms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/terms",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postTerms",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Fall1\",\n    \"startDate\":\"2021-08-07\",\n    \"endDate\":\"2021-9-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/terms",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTerm",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/terms/:idterm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms",
+								":idterm"
+							],
+							"variable": [
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCurrentTerm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/terms/current",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch term",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isCurrent\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/terms/:idterm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms",
+								":idterm"
+							],
+							"variable": [
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTermsNotInCourse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/terms/course/:idcourse",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms",
+								"course",
+								":idcourse"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTermName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/terms/:idterm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"terms",
+								":idterm"
+							],
+							"variable": [
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "postCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name_Course\":\"Info1\",\n    \"description_Course\": \"python Course\",\n    \"category\": \"619175ec016507985a07c86b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourseUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/:idterm/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								":idterm",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourseChapters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/:idterm/:idstudent/chapters",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								":idterm",
+								":idstudent",
+								"chapters"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								},
+								{
+									"key": "idstudent",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourseTerms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/terms",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								"terms"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCurrentCourse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patchCourseCategory",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\":\"619175ec016507985a07c86c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsersNotInCourse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/:idterm/users/not",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								":idterm",
+								"users",
+								"not"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourseReviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/:idterm/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								":idterm",
+								"reviews"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserFromCourse",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/:idterm/:iduser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								":idterm",
+								":iduser"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								},
+								{
+									"key": "iduser",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUsersToCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/courses/:idcourse/:idterm/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								":idcourse",
+								":idterm",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "semesterCourse",
+			"item": [
+				{
+					"name": "postSemCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"course\":\"619a6dd2d32b01466ce78ac4\",\n    \"term\":\"6196beeb5aa7f1db78fb52e0\",\n    \"teacher\":\"id\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/semestercourses/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"semestercourses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSemCouse",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/semestercourses/:idcourse/:idterm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"semestercourses",
+								":idcourse",
+								":idterm"
+							],
+							"variable": [
+								{
+									"key": "idcourse",
+									"value": null
+								},
+								{
+									"key": "idterm",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chapter",
+			"item": [
+				{
+					"name": "postChapter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name_Chapter\":\"Chapitre 1\",\n    \"course\":\"619b5890b46a0469ceefcc81\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/chapters",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"chapters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteChapter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/chapters/:idchapter",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"chapters",
+								":idchapter"
+							],
+							"variable": [
+								{
+									"key": "idchapter",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "postReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"note_review\":\"4\",\r\n    \"text_review\":\"first chap is ok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/reviews/:idchapter/:idterm/:idstudent",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								":idchapter",
+								":idterm",
+								":idstudent"
+							],
+							"variable": [
+								{
+									"key": "idchapter",
+									"value": "61d17eba45acc4ddb080af6e"
+								},
+								{
+									"key": "idterm",
+									"value": "6196beeb5aa7f1db78fb52e0"
+								},
+								{
+									"key": "idstudent",
+									"value": "6196b28ef66d6e335ca0eda8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
